@@ -65,11 +65,17 @@ body{
     color: #fff;
     cursor: pointer;
 }
-.ty-bir-text{
+.ty-bir-text,.ty-bir-text1{
     position: absolute;
     top: 20px;
     left: 100px;
     z-index: 98;
+    color: #f00;
+}
+.ty-bir-text1{
+    top: 50px;
+    left: 150px;
+    color: #f00;
 }
 .ty-left-top{
     position: absolute;
@@ -77,4 +83,105 @@ body{
 }
 .ty-left-top img{
     width: 100%;
+}
+.ty-surprise{
+    width: 200px;
+    height: 50px;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    line-height: 50px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    text-align: center;
+    cursor: pointer;
+}
+.ty-surprise:hover{
+    border-color: rgb(238, 113, 113);
+    background: linear-gradient(#ff878383, #6bc2dd93);
+    color: #f00;
+    animation: doubles 1s ease-in-out alternate-reverse;
+}
+@keyframes doubles {
+    0%{
+        transform: rotate(-15deg)
+    }
+    15%{
+        transform: rotate(-45deg)
+    }
+    30%{
+        transform: rotate(-90deg)
+    }
+    45%{
+        transform: rotate(-135deg)
+    }
+    50%{
+        transform: rotate(-180deg)
+    }
+    65%{
+        transform: rotate(-225deg)
+    }
+    80%{
+        transform: rotate(-270deg)
+    }
+    100%{
+        transform: rotate(-360deg)
+    }
+}
+/**==========遮罩层==========**/
+.ty-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
+    display: none;
+}
+.ty-shadow .ty-shadow-box{
+    position: absolute;
+    width: 30%;
+    height: 150px;
+    background: #fff;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.ty-shadow .ty-shadow-box .ty-btn{
+    position: relative;
+    width: 50%;
+    height: 50px;
+    margin: 50px auto;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 99;
+}
+.ty-shadow .ty-shadow-box .ty-btn::before{
+    content: "没有后路了，跟爸爸回家吧";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    left: -100%;
+    background: rgba(255,0,0,.5);
+    transition: .3s;
+    z-index: 98
+}
+.ty-shadow .ty-shadow-box .ty-btn:hover::before{
+    /* transform:  */
+    left: 0;
+}
+.ty-shadow .ty-shadow-box .ty-btn:hover{color: #fff;}
+.ty-shadow .ty-shadow-box .ty-text{
+    text-align: center;
+    line-height: 150px;
+    display: none;
 }
